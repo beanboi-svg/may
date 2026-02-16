@@ -53,16 +53,20 @@ function spawnCallText() {
     text.textContent = callFallingLines[callLineIndex];
     callLineIndex = (callLineIndex + 1) % callFallingLines.length;
 
-    const horizontalPadding = 4;
-    const xMin = horizontalPadding;
-    const xMax = 100 - horizontalPadding;
-    const randomX = Math.random() * (xMax - xMin) + xMin;
+    // Measure actual rendered width so each line stays fully inside viewport.
+    text.style.visibility = 'hidden';
+    text.style.left = '0px';
+    callTextRainLayer.appendChild(text);
+
+    const safePaddingPx = 8;
+    const textWidth = text.getBoundingClientRect().width;
+    const maxLeft = Math.max(safePaddingPx, window.innerWidth - textWidth - safePaddingPx);
+    const randomLeft = Math.random() * (maxLeft - safePaddingPx) + safePaddingPx;
     const randomDuration = Math.floor(Math.random() * 1200) + 2300;
 
-    text.style.left = `${randomX}%`;
+    text.style.left = `${randomLeft}px`;
     text.style.setProperty('--fall-duration', `${randomDuration}ms`);
-
-    callTextRainLayer.appendChild(text);
+    text.style.visibility = '';
 
     window.setTimeout(() => {
         text.remove();
