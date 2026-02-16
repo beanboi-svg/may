@@ -107,14 +107,12 @@ body {
     transform: translateY(8px);
 }
 
-.signature-name.is-hoey .name-primary,
-.signature-name:hover .name-primary {
+.signature-name.is-hoey .name-primary {
     opacity: 0;
     transform: translateY(-8px);
 }
 
-.signature-name.is-hoey .name-alt,
-.signature-name:hover .name-alt {
+.signature-name.is-hoey .name-alt {
     opacity: 1;
     transform: translateY(0);
 }
