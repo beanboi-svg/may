@@ -1,4 +1,5 @@
 const flowerEls = document.querySelectorAll('.flower-one, .flower-two');
+const signatureName = document.querySelector('.signature-name');
 const loveAudio = new Audio('assets/love.mp3');
 
 function startFlowerSpin() {
@@ -20,3 +21,21 @@ flowerEls.forEach((flower) => {
         });
     });
 });
+
+if (signatureName) {
+    signatureName.addEventListener('mouseenter', () => {
+        signatureName.classList.add('is-hoey');
+    });
+
+    signatureName.addEventListener('mouseleave', () => {
+        signatureName.classList.remove('is-hoey');
+    });
+
+    signatureName.addEventListener('pointerup', (event) => {
+        if (event.pointerType === 'mouse') {
+            return;
+        }
+
+        signatureName.classList.toggle('is-hoey');
+    });
+}

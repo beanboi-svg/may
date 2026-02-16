@@ -81,6 +81,44 @@ body {
     font-family: 'Hedvig Letters Serif', serif;
 }
 
+.signature-name {
+    position: relative;
+    display: inline-block;
+    width: 4ch;
+    height: 1em;
+    cursor: pointer;
+}
+
+.signature-name .name-primary,
+.signature-name .name-alt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: opacity 260ms ease, transform 260ms ease;
+}
+
+.signature-name .name-primary {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.signature-name .name-alt {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.signature-name.is-hoey .name-primary,
+.signature-name:hover .name-primary {
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+.signature-name.is-hoey .name-alt,
+.signature-name:hover .name-alt {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 @media (max-width: 1024px) {
     .hero {
         height: 80vh;
