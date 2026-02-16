@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&family=Hedvig+Letters+Serif:opsz@12..24&display=swap');
+
+body {
+    background-color: #FDFBEE;
+    font-family: 'Hedvig Letters Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.flower-one {
+    position: absolute;
+    top: 132px;
+    left: 162px;
+    width: 180px;
+    height: auto;
+}
+
+.flower-two {
+    position: absolute;
+    top: 632px;
+    right: 162px;
+    width: 180px;
+    height: auto;
+}
+
+.is-spinning {
+    animation: flower-sway 0.9s ease-in-out infinite alternate;
+    transform-origin: center;
+}
+
+@keyframes flower-sway {
+    from {
+        transform: rotate(-14deg);
+    }
+
+    to {
+        transform: rotate(14deg);
+    }
+}
+
+.hero-text {
+    font-family: 'Hedvig Letters Serif', serif;
+    font-size: 100px;
+    text-align: center;
+    margin: 0 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.content {
+    padding: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content-text {
+    font-family: 'Hedvig Letters Sans', sans-serif;
+    font-size: 26px;
+    line-height: 46px;
+    margin-bottom: 50Px;
+}
+
+.content-text.signature {
+    display: block;
+    margin: 0px;
+    font-size: 28px;
+    font-family: 'Hedvig Letters Serif', serif;
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        height: 80vh;
+    }
+
+    .hero-text {
+        font-size: 80px;
+    }
+
+    .flower-one {
+        top: 132px;
+        left: 162px;
+    }
+
+    .flower-two {
+        top: 532px;
+        right: 162px;
+    }
+
+    .flower-one, .flower-two {
+        width: 150px;
+    }
+
+    .content-text {
+        font-size: 22px;
+        line-height: 40px;
+    }
+
+    .content-text.signature {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 75vh;
+    }
+
+    .hero-text {
+        font-size: 60px;
+    }
+
+    .flower-one {
+        top: 132px;
+        left: 62px;
+    }
+
+    .flower-two {
+        top: 532px;
+        right: 62px;
+    }
+
+    .flower-one, .flower-two {
+        width: 120px;
+    }
+
+    .content-text {
+        font-size: 18px;
+        line-height: 32px;
+    }
+
+    .content-text.signature {
+        font-size: 22px;
+    }
+}
