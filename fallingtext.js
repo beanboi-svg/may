@@ -9,6 +9,7 @@ const tempTrackPaths = [
 const callFallingLines = [
     'Can I have your number?',
     'Can I shake my leg while I read?'
+    '"Hot."'
 ];
 
 let tempCurrentAudio = null;
